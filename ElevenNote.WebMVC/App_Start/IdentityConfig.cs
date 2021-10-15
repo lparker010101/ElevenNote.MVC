@@ -54,11 +54,13 @@ namespace ElevenNote.WebMVC
             // Configure validation logic for passwords
             manager.PasswordValidator = new PasswordValidator
             {
-                RequiredLength = 6,
-                RequireNonLetterOrDigit = true,
-                RequireDigit = true,
-                RequireLowercase = true,
-                RequireUppercase = true,
+                RequiredLength = 6, // Set to 4, while developing app.  Can change back to 6 later.  If the length of the 
+                                    // password changes, make adjustments to the values in the AccountViewModels on lines 73 and 92,
+                                    // as well as in ManageViewModels on lines around 31 and 50.  
+                RequireNonLetterOrDigit = false, // These are set to false to use simpler passwords while developing.  
+                RequireDigit = false,
+                RequireLowercase = false,
+                RequireUppercase = false,
             };
 
             // Configure user lockout defaults
