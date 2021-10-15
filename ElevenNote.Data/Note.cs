@@ -19,6 +19,8 @@ namespace ElevenNote.Data
         public string Title { get; set; }
 
         [Required]
+        [Display(Name = "Your Note")]
+        [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
         public string Content { get; set; }
 
         [Required]
