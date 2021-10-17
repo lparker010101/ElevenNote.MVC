@@ -60,3 +60,5 @@ namespace ElevenNote.Services
 // The service layer is how our application interacts with the database.  It will push and pull notes from the database.
 // We added references by right clicking on ElevenNote.Services to add a reference.  We selected Models and Data, so we 
 // can use the models and properties from those projects.  
+
+// This method will allow us to see all the notes that belong to a specific user.  
