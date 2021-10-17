@@ -21,5 +21,39 @@ namespace ElevenNote.WebMVC.Controllers
             var model = new NoteListItem[0]; // Initializing a new instance of the NoteListItem as an IEnumerable with [0] syntax.  Will satisfy some requirements in the Index View.  Module 4.04.
             return View(model);  // When we go to that path, it will return a view for that path.  
         }
+
+        // Add method here VVVV
+        // GET
+        public ActionResult Create() // Need a view and a model for the app to work.  
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(NoteCreate model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            return View(model);
+        }
     }
 }
+
+// Slowly walkthrough the app and hover over the various points where the app is broken.
+//With Breakpoints and Quickwatch, You can explore the data coming from the view, and the best .NET developers use these tools often.
+//Persist a Note
+//When we save something to the database, we persist it.
+
+//Remove the breakpoint and rerun the app.
+//Create a note. When you hit submit, the page won't change.
+//Go to SQL Server Object Explorer.
+//Find the database and expand the tables.
+//Right click on  and click View Data.
+//The data is not going into the database, we'll take care of that in the next chapter by bringing in our ElevenNote.Service.
+//
+//
+//
+// Ctrl k c (comments out many lines)
