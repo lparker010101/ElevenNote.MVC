@@ -55,6 +55,14 @@ namespace ElevenNote.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateNoteService();
+            var model = svc.GetNoteById(id);
+
+            return View(model);
+        }
+
         private NoteService CreateNoteService() // Tip: Do not try to instantiate a Service inside of the constructor.  The MVC
                                                 // framework does not have the data available that may be needed.
         {
