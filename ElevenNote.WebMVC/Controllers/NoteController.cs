@@ -19,7 +19,8 @@ namespace ElevenNote.WebMVC.Controllers
                                     // When running the app, we can go to localhost:xxxxx/Note/Index.  Path starts
                                     // with the name of the controller (without the word controller), then the name of the 
                                     // action, which is Index.  Right click on index to add view in module 4.04.  
-                                    // The Index() method displays all the notes for the current user.  
+                                    // The Index() method displays all the notes for the current user.  If click on Index, then
+                                    // ctrl M G, you will be taken to the Index file.
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new NoteService(userId);
@@ -35,21 +36,31 @@ namespace ElevenNote.WebMVC.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost] // The code in this section adds success/failure messages for validation of note creation.  Module 7.02
+        [ValidateAntiForgeryToken] 
         public ActionResult Create(NoteCreate model)  // The Create(NoteCreate model) method makes sure the model is valid, grabs the current userId, calls
                                                       // on CreateNote, and returns the user back to the index view.  
         {
-            if (!ModelState.IsValid)
-            {
-            return View(model);
-            }
+            if (!ModelState.IsValid) return View(model);
 
+            var service = CreateNoteService();
+
+            if (service.CreateNote(model))
+            {
+                TempData["SaveResult"] = "Your note was created.";
+                return RedirectToAction("Index"); // TempData removes information after it's accessed.
+            };
+
+            ModelState.AddModelError("", "Note could not be created.");
+            return View(model);
+        }
+
+        private NoteService CreateNoteService() // Tip: Do not try to instantiate a Service inside of the constructor.  The MVC
+                                                // framework does not have the data available that may be needed.
+        {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new NoteService(userId);
-            service.CreateNote(model);
-
-            return RedirectToAction("Index");
+            return service;
         }
     }
 }
