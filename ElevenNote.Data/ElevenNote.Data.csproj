@@ -67,6 +67,10 @@
     <Compile Include="Migrations\202110170203518_NotesToCreate.Designer.cs">
       <DependentUpon>202110170203518_NotesToCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110180313172_Module8Done.cs" />
+    <Compile Include="Migrations\202110180313172_Module8Done.Designer.cs">
+      <DependentUpon>202110180313172_Module8Done.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110170203518_NotesToCreate.resx">
       <DependentUpon>202110170203518_NotesToCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110180313172_Module8Done.resx">
+      <DependentUpon>202110180313172_Module8Done.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
