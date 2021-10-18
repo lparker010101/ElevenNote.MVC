@@ -71,6 +71,10 @@
     <Compile Include="Migrations\202110180313172_Module8Done.Designer.cs">
       <DependentUpon>202110180313172_Module8Done.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110180333218_NoteEditPropetiesAdded.cs" />
+    <Compile Include="Migrations\202110180333218_NoteEditPropetiesAdded.Designer.cs">
+      <DependentUpon>202110180333218_NoteEditPropetiesAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110180313172_Module8Done.resx">
       <DependentUpon>202110180313172_Module8Done.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110180333218_NoteEditPropetiesAdded.resx">
+      <DependentUpon>202110180333218_NoteEditPropetiesAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
