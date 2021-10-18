@@ -21,3 +21,10 @@ namespace ElevenNote.WebMVC
         }
     }
 }
+
+// url: is what builds out the URL we see on the webpage.
+// {controller} is the particular controller we are using.  For this project, chances are it will be Note.
+// {action} is the ActionResult we are calling on (Create, Details, Edit, or Delete)
+// {id} is an optional parameter that will only be used when we are working with a specific note.  We'll add the 
+// the NoteId to the end of the Url in these cases.
+// The default parameter is currently set to open the application on the Home page. 

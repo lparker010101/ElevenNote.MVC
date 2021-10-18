@@ -13,7 +13,7 @@ namespace ElevenNoteModels
         public string Title { get; set; }
         public string Content { get; set; }
 
-        [Display(Name ="Created"]
+        [Display(Name ="Created")]
         public DateTimeOffset CreawtedUtc { get; set; }
 
         [Display(Name = "Modified")]
